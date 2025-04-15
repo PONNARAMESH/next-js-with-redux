@@ -1,0 +1,11 @@
+.usersListContainer {
+  > * {
+    margin: min(10px, 1rem) 0;
+  }
+
+  .userActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+}

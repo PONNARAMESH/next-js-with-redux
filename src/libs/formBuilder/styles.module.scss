@@ -1,0 +1,10 @@
+.formBuilderContainer{
+  > * {
+    margin: min(20px, 1rem) 0rem;
+    padding: 1rem 0rem;
+  }
+
+  > .ant-input-number {
+    width: 100% !important;
+  }
+}
