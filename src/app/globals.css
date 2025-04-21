@@ -5,30 +5,25 @@
   --text-color: black;
 }
 
-[data-theme="light"] {
-  --bg-color: white;
-  --text-color: black;
-}
-
-[data-theme="dark"] {
-  --bg-color: black;
-  --text-color: white;
-}
-
 .light-theme {
-  --bg-color: white;
   --text-color: black;
+  --appBgColor: #f5f5f5;
+  --headerBgColor: #ffffff;
+  --buttonBgColor: #1677ff;
+  --buttonTextColor: #ffffff;
+  /* --tableBgColor: #cad5e5;
+  --tableTextColor: #000000; */
 }
 .dark-theme {
-  --bg-color: black;
   --text-color: white;
+  --appBgColor: #222020;
+  --headerBgColor: #222020;
+  --buttonBgColor: #cad5e5;
+  --buttonTextColor: #000000;
+  --tableBgColor: #cad5e5;
+  --tableTextColor: #393838;
+  --tableTextColorOnHover: #000000;
 }
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 html,
 body {
@@ -38,10 +33,13 @@ body {
 
 body {
   color: var(--text-color) !important;
-  background: var(--bg-color) !important;
+  background: var(--appBgColor) !important;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  > div {
+    background: var(--appBgColor) !important;
+  }
 }
 
 * {
@@ -61,12 +59,15 @@ a {
   }
 } */
 
-/* .demo-logo {
-  width: 3rem;
-  background-color: aliceblue;
-} */
+.demo-logo {
+  background-color: #a7bbcc;
+  width: 10rem;
+  height: 2.4rem;
+  border-radius: 0.4rem;
+}
 
 .navBar {
+  width: 100%;
   display: flex;
   align-items: center;
 
@@ -80,4 +81,51 @@ a {
 }
 .navBar > ul > li {
   width: fit-content !important;
+}
+
+header,
+.navBar,
+.navBar > ul,
+.ant-layout,
+aside > div > ul,
+button {
+  background: var(--headerBgColor) !important;
+}
+footer {
+  background: var(--appBgColor) !important;
+  color: var(--text-color) !important;
+}
+
+.themeText {
+  background: var(--headerBgColor) !important;
+  color: var(--text-color) !important;
+}
+
+aside > div > ul {
+  border: #ffffff !important;
+}
+
+li,
+button {
+  background: var(--buttonBgColor) !important;
+  color: var(--buttonTextColor) !important;
+}
+
+.ant-table-thead >tr>td,
+table {
+  color: var(--text-color) !important;
+  background: var(--tableTextColor) !important;
+}
+.ant-table-thead >tr>td,
+table {
+  color: var(--text-color) !important;
+  background: var(--tableTextColor) !important;
+
+  &:hover {
+    color: var(--tableTextColorOnHover);
+  }
+}
+
+.ant-menu-submenu-selected {
+  color: var(--text-color);
 }

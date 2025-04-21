@@ -1,23 +1,26 @@
 'use client';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "../../libs/redux/actions/themeActions";
 import { Menu, Switch } from "antd";
 
-
-const items1 = [
+const menuItems = [
   {
-    key: "home",
-    label: `Home`,
+    key: 'home',
+    label: 'Home',
   },
   {
-    key: "about",
-    label: `About`,
+    key: 'about',
+    label: 'About'
   },
+  {
+    key: 'users',
+    label: 'Users'
+  }
 ];
-
 
 export const PublicHeader = (props) => {
   const dispatch = useDispatch();
+  const themeData = useSelector(state => state?.theme)
   const toggleTheme = () => {
     dispatch(changeTheme())
   }
@@ -27,11 +30,11 @@ export const PublicHeader = (props) => {
       <div className="demo-logo" />
       <Menu
         theme="dark"
-        defaultSelectedKeys={["2"]}
-        items={items1}
+        defaultSelectedKeys={menuItems?.at(2).key}
+        items={menuItems}
         style={{ flex: 1, minWidth: 0 }}
       />
-      <Switch defaultChecked onChange={toggleTheme} />
+      <span className="themeText">Theme:&nbsp;&nbsp;<Switch value={themeData?.theme === 'dark' ? true : false} onChange={toggleTheme} /></span>
     </nav>
     </>
   );
