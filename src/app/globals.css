@@ -9,10 +9,11 @@
   --text-color: black;
   --appBgColor: #f5f5f5;
   --headerBgColor: #ffffff;
-  --buttonBgColor: #1677ff;
+  --buttonBgColor: #3e6297;
   --buttonTextColor: #ffffff;
   /* --tableBgColor: #cad5e5;
   --tableTextColor: #000000; */
+  --submenuTitleColor: #ffbf00;
 }
 .dark-theme {
   --text-color: white;
@@ -23,6 +24,7 @@
   --tableBgColor: #cad5e5;
   --tableTextColor: #393838;
   --tableTextColorOnHover: #000000;
+  --submenuTitleColor: #ff0000;
 }
 
 html,
@@ -128,4 +130,21 @@ table {
 
 .ant-menu-submenu-selected {
   color: var(--text-color);
+}
+
+.ant-menu-submenu-selected {
+
+  .ant-menu-submenu-title,
+  .ant-menu-item-selected{
+    color: var(--submenuTitleColor) !important;
+    font-size: 1rem !important;
+    font-weight: bold;
+  }
+}
+
+.ant-menu .ant-menu-sub .ant-menu-inline {
+  > li {
+    border-color: var(---text-color) !important;
+    
+  }
 }
