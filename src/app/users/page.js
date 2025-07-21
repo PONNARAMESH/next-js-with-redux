@@ -18,6 +18,7 @@ import {
 } from "../../libs/redux/actions/userActions";
 import { getUserTableHeaders } from "./tableHeaders";
 import { UserInfo } from "./components/userInfo";
+// import { Calculator } from "../../components/calculator";
 
 
 export default function Users(props) {
@@ -89,6 +90,10 @@ export default function Users(props) {
       },
     },
   ];
+
+  // return (
+  //   <Calculator />
+  // )
 
   return (
     <div className={styles.usersListContainer}>
